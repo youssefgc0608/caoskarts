@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Caos Karts · TikTok</title>
+<style>body{margin:0;background:#10163a;color:#eef2ff;font:16px system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;text-align:center;padding:16px}h1{color:#ffcf1f}</style>
+<h1>Caos Karts</h1><p id="m">Conectando con TikTok…</p>
+<script>
+// Página de vuelta del permiso de TikTok (TikTok no acepta localhost como dirección de vuelta). Pasa el código al
+// programa de la fábrica de vídeos que espera en este mismo ordenador (tools/promo/tiktok.mjs, puerto 8767).
+const q = location.search;
+if (new URLSearchParams(q).get('code')) location.replace('http://localhost:8767/' + q);
+else document.getElementById('m').textContent = new URLSearchParams(q).get('error_description') || 'Esta página solo se usa al conectar TikTok.';
+</script>
+</html>
